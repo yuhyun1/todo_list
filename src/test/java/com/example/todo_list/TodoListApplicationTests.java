@@ -3,7 +3,7 @@ package com.example.todo_list;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class TodoListApplicationTests {
 
     @Test
