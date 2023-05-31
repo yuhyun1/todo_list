@@ -4,13 +4,13 @@
 <br>
 
 ### :technologist: API 정리
-—
+---
 - **서버** : GET, GETLIST, CREATE, UPDATE, DELETE
 
 <br>
 
 ### :farmer: 기능 정리
-—
+---
 - **클라이언트** : 할 일 추가, 수정, 삭제, 일괄 삭제
 
 <br>
