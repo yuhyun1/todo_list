@@ -13,10 +13,11 @@ import javax.validation.Valid;
 @RestController
 @RequiredArgsConstructor
 public class TodoController {
+
     private final TodoService todoService;
 
-    @PostMapping("/create")
-    public ResponseEntity<CommonResponse> createTodo(@RequestBody CreateTodoRequest request) {
+    @PostMapping("")
+    public ResponseEntity<CommonResponse> createTodo(@RequestBody @Valid CreateTodoRequest request) {
 
         todoService.createTodo(request);
 
@@ -25,7 +26,7 @@ public class TodoController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
-    @PutMapping("/update/{todoId}")
+    @PutMapping("/{todoId}")
     public ResponseEntity<CommonResponse> updateTodo(@PathVariable Long todoId, @RequestBody UpdateTodoRequest request) throws Exception {
 
         todoService.updateTodo(todoId, request);
@@ -35,7 +36,7 @@ public class TodoController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{todoId}")
+    @DeleteMapping("/{todoId}")
     public ResponseEntity<CommonResponse> deleteTodo(@PathVariable Long todoId) throws Exception {
 
         todoService.deleteTodo(todoId);
@@ -45,7 +46,7 @@ public class TodoController {
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
-    @GetMapping("/get/{todoId}")
+    @GetMapping("/{todoId}")
     public ResponseEntity<GetTodoResponse> getTodo(@PathVariable Long todoId) throws Exception {
 
         GetTodoResponse getTodoResponse = todoService.getTodo(todoId);

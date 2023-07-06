@@ -31,7 +31,7 @@ public class TodoService {
         Optional<Todo> findTodo = todoRepository.findById(todoId);
 
         if (findTodo.isEmpty()) {
-            throw new Exception("해당 아이디 값을 가진 유저가 없습니다. 아이디를 다시 한번 확인하세요.");
+            throw new Exception("해당 아이디 값을 가진 투두가 없습니다. 아이디를 다시 한번 확인하세요.");
         }
 
         Todo todo = findTodo.get();
